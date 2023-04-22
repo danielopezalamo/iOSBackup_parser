@@ -1,0 +1,5 @@
+ROWID,key,value,creation_date,last_update_date,journaled
+1,tium.totalWordsTyped,1047738,2051-06-26 20:33:01.167306,2054-02-18 13:38:55.522195,
+2,tium.totalWordsPathed,874,2051-06-26 20:46:02.519715,2054-02-14 18:36:58.548793,
+3,tium.totalWordsAutocorrected,207819,2051-09-21 08:37:51.682191,2054-02-18 11:51:51.911720,
+4,tium.totalWordsFromCandidateBar,98415,2051-09-21 15:12:56.167377,2054-02-18 11:51:51.911720,

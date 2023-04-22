@@ -1,0 +1,7 @@
+Z_ENT,Z_NAME,Z_SUPER,Z_MAX
+1,InAppReviewRequest,0,87
+2,MicroPaymentBase,0,14
+3,MicroPayment,2,0
+4,MicroPaymentRefund,2,0
+5,MicroPaymentClient,0,31
+6,MicroPaymentDownload,0,0
