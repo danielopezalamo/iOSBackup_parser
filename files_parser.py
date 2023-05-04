@@ -24,7 +24,7 @@ def getTables(b: iOSbackup, file: str, module: str):
         tables.append(row[0])
     return tables
 
-def compare_convert_timestamps(df: pd.DataFrame):
+""" def compare_convert_timestamps(df: pd.DataFrame):
     timestamps = df[['ZFIRSTTIMESTAMP', 'ZTIMESTAMP']]
     unix = datetime(1970, 1, 1)  # UTC
     cocoa = datetime(2001, 1, 1)  # UTC
@@ -41,7 +41,7 @@ def compare_convert_timestamps(df: pd.DataFrame):
         df.loc[i, ['ZTIMESTAMP']] = [datetime.fromtimestamp(l_time) + delta]
     df["ZEQUALTIMESTAMP"] = eq
     return df
-
+ """
 
 def convert_timestamps(df: pd.DataFrame, cols: list):
     convert_columns = []
@@ -75,12 +75,7 @@ def getDbFiles(b:iOSbackup, db_files: list, module: str):
             names = [description[0] for description in cur.description]
             # Fetch all in a dataframe and convert to csv
             df = pd.DataFrame(res, columns=names)
-            if 'ZTIMESTAMP' in names and 'ZFIRSTTIMESTAMP' in names:
-                df = compare_convert_timestamps(df)
-            else:
-                df = convert_timestamps(df, names)
-            if table == 'history_tags':
-                df = convert_timestamps(df, names)
+            convert_timestamps(df, names)
             if not os.path.exists('csv/%s/%s' % (module, filename)):
                 os.mkdir('csv/%s/%s' % (module, filename))
             df.to_csv('csv/%s/%s/%s.csv' % (module, filename, table), index=False)
