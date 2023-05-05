@@ -7,10 +7,11 @@ PLIST_FILES = [
 ]
 LOG_FILES = ['Library/Logs/mobile_installation_helper.log']
 
-import files_parser as fp
+import fileParser as fp
 from iOSbackup import iOSbackup
 
 def getApplicationTracesInfo(b: iOSbackup):
-    #fp.getDbFiles(b, DB_FILES, "ApplicationTraces")
+    print("------- APPLICATION TRACES -------")
+    fp.getDbFiles(b, DB_FILES, "ApplicationTraces")
     fp.getLogFiles(b, LOG_FILES, "ApplicationTraces")
-    #fp.getPlistFiles(b, PLIST_FILES, "ApplicationTraces")
+    fp.getPlistFiles(b, PLIST_FILES, "ApplicationTraces")

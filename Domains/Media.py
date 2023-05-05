@@ -3,10 +3,11 @@ import pandas as pd
 import os
 
 def getMediaFolderInfo(b: iOSbackup):
-    #b.getFolderDecryptedCopy(
-    #    'Media/DCIM',
-    #    targetFolder='copied_files/Media'
-    #)
+    print("------- MEDIA -------")
+    files = b.getFolderDecryptedCopy(
+        'Media/DCIM',
+        targetFolder='copied_files/Media'
+    )
     media = []
     for subdir, dirs, files in os.walk('copied_files/Media/CameraRollDomain/Media/DCIM'):
         for file in files:
@@ -24,6 +25,3 @@ def getMediaFolderInfo(b: iOSbackup):
     )
     df.to_csv('csv/Media/media.csv')
 
-def test(b: iOSbackup):
-    file = b.getRelativePathDecryptedData('Media/DCIM')
-    print(file)

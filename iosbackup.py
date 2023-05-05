@@ -1,5 +1,5 @@
 from iOSbackup import iOSbackup
-from Domains import SeenBluetoothDevices, ActivityThrottling, Media, DiskUsage, AppleCar,\
+from domains import SeenBluetoothDevices, ActivityThrottling, Media, DiskUsage, AppleCar,\
 SafariHistory, ApplicationTraces, Siri, NetworkStatistics, \
 Keyboard, LastLocation, CallHistory
 
@@ -20,6 +20,7 @@ print('Backup Opened!')
 #find_file(b, 'Media/DCIM')
 
 # Data extraction and parsing
+print("Scanning artifacts...")
 SafariHistory.getSafariHistoryInfo(b)
 ActivityThrottling.getActivityThrottlingInfo(b)
 ApplicationTraces.getApplicationTracesInfo(b)
