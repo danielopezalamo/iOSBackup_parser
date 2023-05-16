@@ -52,5 +52,5 @@ Now we can put the derivedKey in the iOSBackup.py file:
 )
 ```
 
-Now execute the script to parse the data and generate the .csv files.
+Now execute the script to parse the data and generate the .csv and .json files.
 

@@ -76,9 +76,9 @@ def getDbFiles(b:iOSbackup, db_files: list, module: str):
             # Fetch all in a dataframe and convert to csv
             df = pd.DataFrame(res, columns=names)
             convert_timestamps(df, names)
-            if not os.path.exists('csv/%s/%s' % (module, filename)):
-                os.mkdir('csv/%s/%s' % (module, filename))
-            df.to_csv('csv/%s/%s/%s.csv' % (module, filename, table), index=False)
+            if not os.path.exists('parsed_data/%s/%s' % (module, filename)):
+                os.mkdir('parsed_data/%s/%s' % (module, filename))
+            df.to_csv('parsed_data/%s/%s/%s.csv' % (module, filename, table), index=False)
         print('%s info saved...' % filename)
 
 def getLogFiles(b: iOSbackup, log_files: list, module: str):
@@ -101,7 +101,7 @@ def getPlistFiles(b:iOSbackup, plist_files: list, module: str):
             data = plistlib.load(f)
         f.close()
         
-        with open('csv/%s/%s.json' % (module, filename), 'w') as fp:
+        with open('parsed_data/%s/%s.json' % (module, filename), 'w') as fp:
             json.dump(data, fp, default=str)
         fp.close()
         print('%s info saved...' % filename)

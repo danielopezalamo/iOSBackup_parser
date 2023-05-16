@@ -34,11 +34,3 @@ Media.getMediaFolderInfo(b)
 Keyboard.getKeyboardInfo(b)
 LastLocation.getLastLocationInfo(b)
 CallHistory.getCallHistoryInfo(b)
-
-
-
-
-
-
-
-

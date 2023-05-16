@@ -23,5 +23,5 @@ def getMediaFolderInfo(b: iOSbackup):
         list(zip(media, created, last_modified)),
         columns =['media', 'created', 'last_modified']
     )
-    df.to_csv('csv/Media/media.csv')
+    df.to_csv('parsed_data/Media/media.csv')
 
