@@ -1,3 +1,5 @@
+#python3 .\iosbackup.py 00008020-001650623A79002E 6a606ae61c7ac05307f91d530454c8f67cc3b8bfdd9d5f8dbc2cd3bd1322c26d C:\Users\Daniel\Desktop\00008020-001650623A79002E Daniel
+
 from pathlib import Path
 import sys, os, _winapi, json
 from iOSbackup import iOSbackup
@@ -31,6 +33,21 @@ def main():
     try:
         b = iOSbackup(udid="%s" % sys.argv[1], derivedkey="%s" %sys.argv[2])
         print('Backup Opened!')
+        # Data extraction and parsing
+        print("Scanning artifacts...")
+        SafariHistory.getSafariHistoryInfo(b)
+        ActivityThrottling.getActivityThrottlingInfo(b)
+        ApplicationTraces.getApplicationTracesInfo(b)
+        SeenBluetoothDevices.getSeenBluetoothDevicesInfo(b)
+        Siri.getSiriInfo(b)
+        SafariHistory.getSafariHistoryInfo(b)
+        NetworkStatistics.getNetworkStatisticsInfo(b)
+        DiskUsage.getDiskUsageInfo(b)
+        AppleCar.getAppleCarInfo(b)
+        Media.getMediaFolderInfo(b)
+        Keyboard.getKeyboardInfo(b)
+        LastLocation.getLastLocationInfo(b)
+        CallHistory.getCallHistoryInfo(b)
     except ValueError:
         print("Something went wrong... Please check all the inserted parameters!")
 
