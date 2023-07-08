@@ -40,7 +40,6 @@ def main():
         ApplicationTraces.getApplicationTracesInfo(b)
         SeenBluetoothDevices.getSeenBluetoothDevicesInfo(b)
         Siri.getSiriInfo(b)
-        SafariHistory.getSafariHistoryInfo(b)
         NetworkStatistics.getNetworkStatisticsInfo(b)
         DiskUsage.getDiskUsageInfo(b)
         AppleCar.getAppleCarInfo(b)
